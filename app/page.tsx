@@ -28,6 +28,8 @@ export default function Home() {
             src={HeroImage}
             alt="man playing a guitar"
             className="rounded-xl max-w-full"
+            height={3000}
+            width={2000}
           />
         </div>
       </section>
