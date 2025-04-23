@@ -1,35 +1,34 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import HeroImage from '../public/hero-image.jpg';
+import HeroImage from '../public/hero-image.png';
 import { Button } from './components/ui/button';
+import Logo from './components/ui/logo';
 
 export default function Home() {
   return (
-    <main>
+    <main className="min-h-screen flex flex-col">
       <header className="bg-slate-100 p-8">
         <div className="max-w-4xl m-auto">
-          <h3 className="text-3xl font-bold">
-            vibe<span className="text-violet-700">Studios</span>
-          </h3>
+          <Logo />
         </div>
       </header>
-      <section className="grid gap-8 items-center md:grid-cols-2 mt-20 p-4 max-w-4xl m-auto">
+      <section className="flex grow gap-8 items-center md:flex-row p-4 max-w-4xl m-auto">
         <div>
-          <p className="text-3xl sm:text-4xl md:text-6xl">
-            <strong>Welcome to vibeStudios </strong>
+          <p className="text-3xl sm:text-4xl md:text-6xl font-bold">
+            Welcome to vibe<span className="text-violet-700">Studios</span>{' '}
             booking app
           </p>
-          <Button asChild className="mt-4" size="lg">
+          <Button asChild className="mt-8" size="lg">
             <Link href="/login">Log In</Link>
           </Button>
         </div>
         <div className="max-w-full">
           <Image
             src={HeroImage}
-            alt="man playing a guitar"
-            className="rounded-xl max-w-full"
-            height={3000}
-            width={2000}
+            alt="mixing console"
+            className="rounded-sm max-w-full"
+            height={2731}
+            width={4096}
           />
         </div>
       </section>
