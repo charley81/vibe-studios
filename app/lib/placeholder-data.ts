@@ -7,8 +7,8 @@ const users = [
   },
 ];
 
-// clients
-const clients = [
+// customers
+const customers = [
   {
     id: 'd6e15727-9fe1-4961-8c5b-ea44a9bd81aa',
     name: 'Eminem',
@@ -44,79 +44,79 @@ const clients = [
 // bookings
 const bookings = [
   {
-    client_id: clients[0].id,
+    customer_id: customers[0].id,
     amount: 15795,
     status: 'pending',
     date: '2024-12-06',
   },
   {
-    client_id: clients[1].id,
+    customer_id: customers[1].id,
     amount: 20348,
     status: 'pending',
     date: '2024-11-14',
   },
   {
-    client_id: clients[4].id,
+    customer_id: customers[4].id,
     amount: 3040,
     status: 'paid',
     date: '2024-10-29',
   },
   {
-    client_id: clients[3].id,
+    customer_id: customers[3].id,
     amount: 44800,
     status: 'paid',
     date: '2024-09-10',
   },
   {
-    client_id: clients[5].id,
+    customer_id: customers[5].id,
     amount: 34577,
     status: 'paid',
     date: '2024-08-05',
   },
   {
-    client_id: clients[2].id,
+    customer_id: customers[2].id,
     amount: 54246,
     status: 'pending',
     date: '2024-07-16',
   },
   {
-    client_id: clients[0].id,
+    customer_id: customers[0].id,
     amount: 660,
     status: 'pending',
     date: '2024-06-27',
   },
   {
-    client_id: clients[3].id,
+    customer_id: customers[3].id,
     amount: 32545,
     status: 'paid',
     date: '2024-06-09',
   },
   {
-    client_id: clients[4].id,
+    customer_id: customers[4].id,
     amount: 1250,
     status: 'paid',
     date: '2024-06-17',
   },
   {
-    client_id: clients[5].id,
+    customer_id: customers[5].id,
     amount: 8546,
     status: 'paid',
     date: '2024-06-07',
   },
   {
-    client_id: clients[1].id,
+    customer_id: customers[1].id,
     amount: 500,
     status: 'paid',
     date: '2024-08-19',
   },
   {
-    client_id: clients[5].id,
+    customer_id: customers[5].id,
     amount: 8945,
     status: 'paid',
     date: '2024-06-03',
   },
   {
-    client_id: clients[2].id,
+    customer_id: customers[2].id,
     amount: 1000,
     status: 'paid',
     date: '2024-06-05',
@@ -139,4 +139,4 @@ const revenue = [
   { month: 'Dec', revenue: 4800 },
 ];
 
-export { users, clients, bookings, revenue };
+export { users, customers, bookings, revenue };
