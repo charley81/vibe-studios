@@ -49,7 +49,7 @@ export type BookingsTable = {
   status: 'pending' | 'paid';
 };
 
-export type CustomersTable = {
+export type CustomersTableType = {
   id: string;
   name: string;
   email: string;
