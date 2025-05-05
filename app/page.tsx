@@ -29,6 +29,7 @@ export default function Home() {
             className="rounded-sm max-w-full hidden md:block"
             height={2731}
             width={4096}
+            priority
           />
         </div>
       </section>

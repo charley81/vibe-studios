@@ -1,129 +1,128 @@
+// This file contains placeholder data that you'll be replacing with real data in the Data Fetching chapter:
+// https://nextjs.org/learn/dashboard-app/fetching-data
 const users = [
   {
     id: '410544b2-4001-4271-9855-fec4b6a6442a',
-    name: 'John Doe',
-    email: 'jdoe@vibestudios.com',
-    password: '1234',
+    name: 'User',
+    email: 'user@nextmail.com',
+    password: '123456',
   },
 ];
 
-// customers
 const customers = [
   {
     id: 'd6e15727-9fe1-4961-8c5b-ea44a9bd81aa',
-    name: 'Eminem',
-    email: 'marshalmatters@interscope.com',
+    name: 'Evil Rabbit',
+    email: 'evil@rabbit.com',
   },
   {
     id: '3958dc9e-712f-4377-85e9-fec4b6a6442a',
-    name: 'Mariah Carey',
-    email: 'mcarey@gmail.com',
+    name: 'Delba de Oliveira',
+    email: 'delba@oliveira.com',
   },
   {
     id: '3958dc9e-742f-4377-85e9-fec4b6a6442a',
-    name: 'Willie Nelson',
-    email: 'willienelson01@gmail.com',
+    name: 'Lee Robinson',
+    email: 'lee@robinson.com',
   },
   {
     id: '76d65c26-f784-44a2-ac19-586678f7c2f2',
-    name: 'Jay-Z',
-    email: 'jayz@theroc.com',
+    name: 'Michael Novotny',
+    email: 'michael@novotny.com',
   },
   {
     id: 'CC27C14A-0ACF-4F4A-A6C9-D45682C144B9',
-    name: 'Romeo Santos',
-    email: 'romeo@santosrecords.com',
+    name: 'Amy Burns',
+    email: 'amy@burns.com',
   },
   {
     id: '13D07535-C59E-4157-A011-F8D2EF4E0CBB',
-    name: 'Metallica',
-    email: 'joethemanager@virginrecords.com',
+    name: 'Balazs Orban',
+    email: 'balazs@orban.com',
   },
 ];
 
-// bookings
 const bookings = [
   {
     customer_id: customers[0].id,
     amount: 15795,
     status: 'pending',
-    date: '2024-12-06',
+    date: '2022-12-06',
   },
   {
     customer_id: customers[1].id,
     amount: 20348,
     status: 'pending',
-    date: '2024-11-14',
+    date: '2022-11-14',
   },
   {
     customer_id: customers[4].id,
     amount: 3040,
     status: 'paid',
-    date: '2024-10-29',
+    date: '2022-10-29',
   },
   {
     customer_id: customers[3].id,
     amount: 44800,
     status: 'paid',
-    date: '2024-09-10',
+    date: '2023-09-10',
   },
   {
     customer_id: customers[5].id,
     amount: 34577,
-    status: 'paid',
-    date: '2024-08-05',
+    status: 'pending',
+    date: '2023-08-05',
   },
   {
     customer_id: customers[2].id,
     amount: 54246,
     status: 'pending',
-    date: '2024-07-16',
+    date: '2023-07-16',
   },
   {
     customer_id: customers[0].id,
-    amount: 660,
+    amount: 666,
     status: 'pending',
-    date: '2024-06-27',
+    date: '2023-06-27',
   },
   {
     customer_id: customers[3].id,
     amount: 32545,
     status: 'paid',
-    date: '2024-06-09',
+    date: '2023-06-09',
   },
   {
     customer_id: customers[4].id,
     amount: 1250,
     status: 'paid',
-    date: '2024-06-17',
+    date: '2023-06-17',
   },
   {
     customer_id: customers[5].id,
     amount: 8546,
     status: 'paid',
-    date: '2024-06-07',
+    date: '2023-06-07',
   },
   {
     customer_id: customers[1].id,
     amount: 500,
     status: 'paid',
-    date: '2024-08-19',
+    date: '2023-08-19',
   },
   {
     customer_id: customers[5].id,
     amount: 8945,
     status: 'paid',
-    date: '2024-06-03',
+    date: '2023-06-03',
   },
   {
     customer_id: customers[2].id,
     amount: 1000,
     status: 'paid',
-    date: '2024-06-05',
+    date: '2022-06-05',
   },
 ];
 
-// revenue
 const revenue = [
   { month: 'Jan', revenue: 2000 },
   { month: 'Feb', revenue: 1800 },
