@@ -9,7 +9,7 @@ export type User = {
   password: string;
 };
 
-export type Client = {
+export type Customer = {
   id: string;
   name: string;
   email: string;
@@ -30,7 +30,6 @@ export type Revenue = {
 export type LatestBooking = {
   id: string;
   name: string;
-  image_url: string;
   email: string;
   amount: string;
 };
@@ -50,7 +49,7 @@ export type BookingsTable = {
   status: 'pending' | 'paid';
 };
 
-export type ClientTable = {
+export type CustomersTable = {
   id: string;
   name: string;
   email: string;
@@ -59,7 +58,7 @@ export type ClientTable = {
   total_paid: string;
 };
 
-export type ClientField = {
+export type CustomerField = {
   id: string;
   name: string;
 };
