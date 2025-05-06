@@ -1,5 +1,5 @@
 import { Banknote, Clock, UsersRound, Library } from 'lucide-react';
-
+import { fetchCardData } from '@/app/lib/data';
 const iconMap = {
   collected: Banknote,
   customers: UsersRound,
@@ -7,15 +7,22 @@ const iconMap = {
   bookings: Library
 };
 
-// export default async function CardWrapper() {
-//   return (
-//     <>
-//       {/* NOTE Uncomment this code in chapter 9 */}
-
-//       <Card title="collected" value={totalPaidBooking} type="collected" />
-//     </>
-//   );
-// }
+export default async function CardWrapper() {
+  const {
+    totalPaidBookings,
+    totalPendingBookings,
+    numberOfBookings,
+    numberOfCustomers
+  } = await fetchCardData();
+  return (
+    <>
+      <Card title="collected" value={totalPaidBookings} type="collected" />
+      <Card title="collected" value={totalPendingBookings} type="pending" />
+      <Card title="collected" value={numberOfBookings} type="bookings" />
+      <Card title="collected" value={numberOfCustomers} type="customers" />
+    </>
+  );
+}
 
 export function Card({
   title,

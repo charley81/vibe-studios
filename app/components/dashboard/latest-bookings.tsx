@@ -1,12 +1,9 @@
 import { RefreshCw } from 'lucide-react';
-import { LatestBooking } from '@/app/lib/definitions';
+import { fetchLatestBookings } from '@/app/lib/data';
 import clsx from 'clsx';
 
-export default function LatestBookings({
-  latestBookings
-}: {
-  latestBookings: LatestBooking[];
-}) {
+export default async function LatestBookings() {
+  const latestBookings = await fetchLatestBookings();
   return (
     <div className="flex w-full flex-col md:col-span-4">
       <h2 className="mb-4 text-xl md:text-2xl">Latest Bookings</h2>
