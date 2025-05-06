@@ -18,7 +18,7 @@ export default function Home() {
             Welcome to vibe<span className="text-violet-700">Studios</span>{' '}
             booking app
           </p>
-          <Button asChild className="mt-8" size="lg">
+          <Button className="mt-8">
             <Link href="/login">Log In</Link>
           </Button>
         </div>
