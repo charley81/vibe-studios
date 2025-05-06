@@ -1,7 +1,11 @@
-import { Card } from '../components/dashboard/cards';
-import RevenueChart from '../components/dashboard/revenue-chart';
-import LatestBookings from '../components/dashboard/latest-bookings';
-import { fetchRevenue, fetchLatestBookings, fetchCardData } from '../lib/data';
+import { Card } from '../../components/dashboard/cards';
+import RevenueChart from '../../components/dashboard/revenue-chart';
+import LatestBookings from '../../components/dashboard/latest-bookings';
+import {
+  fetchRevenue,
+  fetchLatestBookings,
+  fetchCardData
+} from '../../lib/data';
 
 export default async function DashboarPage() {
   const revenue = await fetchRevenue();
