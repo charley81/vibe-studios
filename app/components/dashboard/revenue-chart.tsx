@@ -1,6 +1,7 @@
 import { generateYAxis } from '@/app/lib/utils';
 import { Calendar } from 'lucide-react';
 import { Revenue } from '@/app/lib/definitions';
+import { fetchRevenue } from '@/app/lib/data';
 
 // TODO: This component is representational only.
 // Change to For data visualization UI, check out:
@@ -8,7 +9,8 @@ import { Revenue } from '@/app/lib/definitions';
 // https://www.chartjs.org/
 // https://airbnb.io/visx/
 
-export default function RevenueChart({ revenue }: { revenue: Revenue[] }) {
+export default async function RevenueChart() {
+  const revenue = await fetchRevenue();
   const chartHeight = 350;
 
   const { yAxisLabels, topLabel } = generateYAxis(revenue);
