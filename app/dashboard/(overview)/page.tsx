@@ -3,7 +3,7 @@ import LatestBookings from '../../components/dashboard/latest-bookings';
 import CardWrapper from '@/app/components/dashboard/cards';
 import {
   RevenueChartSkeleton,
-  LatestInvoicesSkeleton,
+  LatestBookingsSkeleton,
   CardSkeleton
 } from '@/app/components/dashboard/skeletons';
 import { Suspense } from 'react';
@@ -21,7 +21,7 @@ export default async function DashboarPage() {
         <Suspense fallback={<RevenueChartSkeleton />}>
           <RevenueChart />
         </Suspense>
-        <Suspense fallback={<LatestInvoicesSkeleton />}>
+        <Suspense fallback={<LatestBookingsSkeleton />}>
           <LatestBookings />
         </Suspense>
       </div>
