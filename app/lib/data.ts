@@ -75,3 +75,38 @@ export async function fetchCardData() {
     throw new Error('Failed to fetch card data');
   }
 }
+
+const ITEMS_PER_PAGE = 6;
+export async function fetchFilteredBookings(
+  query: string,
+  currentPage: number
+) {
+  const offset = (currentPage - 1) * ITEMS_PER_PAGE;
+
+  try {
+    const bookings = await sql<BookingsTable[]>`
+      SELECT
+        bookings.id,
+        bookings.amount,
+        bookings.date,
+        bookings.status,
+        customers.name,
+        customers.email
+      FROM bookings
+      JOIN customers ON bookings.customer_id = customer_id
+      WHERE
+        customers.name ILIKE ${`%${query}%`} OR
+        customers.email ILIKE ${`%${query}%`} OR
+        bookings.amount::text ILIKE ${`%${query}%`} OR
+        bookings.date::text ILIKE ${`%${query}%`} OR
+        bookings.status ILIKE ${`%${query}%`}
+        ORDER BY bookings.date DESC
+        LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}
+    `;
+
+    return bookings;
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw new Error('Failed to fetch bookings');
+  }
+}

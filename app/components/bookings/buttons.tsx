@@ -13,7 +13,7 @@ export function CreateBooking() {
   );
 }
 
-export function UpdateInvoice({ id }: { id: string }) {
+export function UpdateBooking({ id }: { id: string }) {
   return (
     <Link
       href="/dashboard/bookings"
@@ -24,7 +24,7 @@ export function UpdateInvoice({ id }: { id: string }) {
   );
 }
 
-export function DeleteInvoice({ id }: { id: string }) {
+export function DeleteBooking({ id }: { id: string }) {
   return (
     <>
       <button
