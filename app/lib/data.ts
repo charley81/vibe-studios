@@ -93,7 +93,7 @@ export async function fetchFilteredBookings(
         customers.name,
         customers.email
       FROM bookings
-      JOIN customers ON bookings.customer_id = customer_id
+      JOIN customers ON bookings.customer_id = customers.id
       WHERE
         customers.name ILIKE ${`%${query}%`} OR
         customers.email ILIKE ${`%${query}%`} OR
@@ -129,5 +129,22 @@ export async function fetchBookingsPages(query: string) {
   } catch (error) {
     console.error('Database Error', error);
     throw new Error('Failed to fetch total number of bookings');
+  }
+}
+
+export async function fetchCustomers() {
+  try {
+    const customers = await sql<CustomerField[]>`
+      SELECT
+        id,
+        name
+      FROM customers
+      ORDER BY name ASC
+    `;
+
+    return customers;
+  } catch (error) {
+    console.log('Database Error', error);
+    throw new Error('Failed to fetch customers.');
   }
 }

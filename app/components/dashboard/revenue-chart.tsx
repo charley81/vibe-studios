@@ -1,6 +1,5 @@
 import { generateYAxis } from '@/app/lib/utils';
 import { Calendar } from 'lucide-react';
-import { Revenue } from '@/app/lib/definitions';
 import { fetchRevenue } from '@/app/lib/data';
 
 // TODO: This component is representational only.
