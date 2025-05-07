@@ -4,6 +4,7 @@ import Table from '@/app/components/bookings/table';
 import { CreateBooking } from '@/app/components/bookings/buttons';
 import { BookingsTableSkeleton } from '@/app/components/dashboard/skeletons';
 import { Suspense } from 'react';
+import { fetchBookingsPages } from '@/app/lib/data';
 
 export default async function BookingsPage(props: {
   searchParams?: Promise<{
@@ -14,6 +15,7 @@ export default async function BookingsPage(props: {
   const searchParams = await props.searchParams;
   const query = searchParams?.query || '';
   const currentPage = Number(searchParams?.page) || 1;
+  const totalPages = await fetchBookingsPages(query);
 
   return (
     <div className="w-full">
@@ -28,7 +30,7 @@ export default async function BookingsPage(props: {
         <Table query={query} currentPage={currentPage} />
       </Suspense>
       <div className="mt-5 flex w-full justify-center">
-        {/* <PannerNode totalPages={totalPages}/> */}
+        <Pagination totalPages={totalPages} />
       </div>
     </div>
   );
