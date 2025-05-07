@@ -107,7 +107,6 @@ export async function fetchFilteredBookings(
     return bookings;
   } catch (error) {
     console.error('Database Error:', error);
-    s;
     throw new Error('Failed to fetch bookings');
   }
 }
