@@ -54,3 +54,8 @@ export async function updateBooking(id: string, formData: FormData) {
   revalidatePath('dashboard/bookings');
   redirect('/dashboard/bookings');
 }
+
+export async function deleteBooking(id: string) {
+  await sql`DELETE FROM bookings WHERE id = ${id}`;
+  revalidatePath('/dashboard/bookings');
+}

@@ -1,5 +1,6 @@
 import { Pencil, Plus, Trash } from 'lucide-react';
 import Link from 'next/link';
+import { deleteBooking } from '@/app/lib/actions';
 
 export function CreateBooking() {
   return (
@@ -25,8 +26,9 @@ export function UpdateBooking({ id }: { id: string }) {
 }
 
 export function DeleteBooking({ id }: { id: string }) {
+  const deleteBookingWithId = deleteBooking.bind(null, id);
   return (
-    <>
+    <form action={deleteBookingWithId}>
       <button
         type="submit"
         className="rounded-md border p-2 hover:bg-slate-100"
@@ -34,6 +36,6 @@ export function DeleteBooking({ id }: { id: string }) {
         <span className="sr-only">Delete</span>
         <Trash className="w-5" />
       </button>
-    </>
+    </form>
   );
 }
