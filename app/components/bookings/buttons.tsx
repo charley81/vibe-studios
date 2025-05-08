@@ -16,7 +16,7 @@ export function CreateBooking() {
 export function UpdateBooking({ id }: { id: string }) {
   return (
     <Link
-      href="/dashboard/bookings"
+      href={`/dashboard/bookings/${id}/edit`}
       className="rounded-md border p-2 hover:bg-slate-100"
     >
       <Pencil className="w-5" />

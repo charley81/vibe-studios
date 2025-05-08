@@ -132,6 +132,31 @@ export async function fetchBookingsPages(query: string) {
   }
 }
 
+export async function fetchBookingById(id: string) {
+  try {
+    const data = await sql<BookingForm[]>`
+      SELECT
+        bookings.id,
+        bookings.customer_id,
+        bookings.amount,
+        bookings.status
+      FROM bookings
+      WHERE bookings.id = ${id}
+    `;
+
+    const booking = data.map((booking) => ({
+      ...booking,
+      // convert amount from cents to dollars
+      amount: booking.amount / 100
+    }));
+
+    return booking[0];
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw new Error(`Failed to fetch booking with id: ${id}`);
+  }
+}
+
 export async function fetchCustomers() {
   try {
     const customers = await sql<CustomerField[]>`
