@@ -1,4 +1,4 @@
-import Form from '@/app/components/bookings/form';
+import Form from '@/app/components/bookings/create-form';
 import Breadcrumbs from '@/app/components/bookings/breadcrumbs';
 import { fetchCustomers } from '@/app/lib/data';
 

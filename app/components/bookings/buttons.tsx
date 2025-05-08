@@ -5,7 +5,7 @@ export function CreateBooking() {
   return (
     <Link
       href="/dashboard/bookings/create"
-      className="flex h-10 items-center rounded-lg bg-black px-4 text-sm font-medium text-white transition-colors hover:bg-white hover:border border-transparent hover:border-black focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-violet-600"
+      className="flex h-10 items-center rounded-lg bg-black px-4 text-sm font-medium text-white transition-colors hover:bg-white hover:text-black border border-transparent hover:border-black focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-violet-600"
     >
       <span className="hidden md:block">Create Booking</span>
       <Plus className="h-5 md:ml-4" />
