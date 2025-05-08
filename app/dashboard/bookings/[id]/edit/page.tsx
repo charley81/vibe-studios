@@ -1,6 +1,7 @@
 import Breadcrumbs from '@/app/components/bookings/breadcrumbs';
 import Form from '@/app/components/bookings/edit-form';
 import { fetchBookingById, fetchCustomers } from '@/app/lib/data';
+import { notFound } from 'next/navigation';
 
 export default async function Page(props: { params: Promise<{ id: string }> }) {
   const params = await props.params;
@@ -9,6 +10,11 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
     fetchBookingById(id),
     fetchCustomers()
   ]);
+
+  if (!booking) {
+    notFound();
+  }
+
   return (
     <main>
       <Breadcrumbs
