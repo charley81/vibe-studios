@@ -27,10 +27,14 @@ export async function createBooking(formData: FormData) {
   const amountInCents = amount * 100;
   const date = new Date().toISOString().split('T')[0];
 
-  await sql`
+  try {
+    await sql`
     INSERT INTO bookings (customer_id, amount, status, date)
     VALUES (${customerId}, ${amountInCents}, ${status}, ${date})
   `;
+  } catch (error) {
+    console.error(error);
+  }
 
   revalidatePath('/dashboard/bookings');
   redirect('/dashboard/bookings');
@@ -45,17 +49,25 @@ export async function updateBooking(id: string, formData: FormData) {
 
   const amountInCents = amount * 100;
 
-  await sql`
+  try {
+    await sql`
     UPDATE bookings
     SET customer_id = ${customerId}, amount = ${amountInCents}, status = ${status}
     WHERE id = ${id}
   `;
+  } catch (error) {
+    console.error(error);
+  }
 
   revalidatePath('dashboard/bookings');
   redirect('/dashboard/bookings');
 }
 
 export async function deleteBooking(id: string) {
-  await sql`DELETE FROM bookings WHERE id = ${id}`;
+  try {
+    await sql`DELETE FROM bookings WHERE id = ${id}`;
+  } catch (error) {
+    console.error(error);
+  }
   revalidatePath('/dashboard/bookings');
 }
