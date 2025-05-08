@@ -1,5 +1,4 @@
 import { Check, Clock } from 'lucide-react';
-import clsx from 'clsx';
 
 export default function BookingStatus({ status }: { status: string }) {
   return (

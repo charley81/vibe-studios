@@ -1,7 +1,6 @@
 import postgres from 'postgres';
 import {
   CustomerField,
-  CustomersTableType,
   BookingForm,
   BookingsTable,
   LatestBookingRaw,
@@ -38,7 +37,7 @@ export async function fetchLatestBookings() {
 
     return latestBookings;
   } catch (error) {
-    console.error('Database Error:', Error);
+    console.error('Database Error:', error);
     throw new Error('Failed to fetch the latest invoices');
   }
 }
