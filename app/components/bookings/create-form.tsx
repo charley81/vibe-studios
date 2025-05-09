@@ -1,12 +1,17 @@
+'use client';
+
 import { CustomerField } from '@/app/lib/definitions';
 import Link from 'next/link';
 import { Check, Clock, CircleDollarSign, CircleUserRound } from 'lucide-react';
 import { Button } from '../ui/button';
-import { createBooking } from '@/app/lib/actions';
+import { createBooking, State } from '@/app/lib/actions';
+import { useActionState } from 'react';
 
 export default function Form({ customers }: { customers: CustomerField[] }) {
+  const initialState: State = { message: null, errors: {} };
+  const [state, formAction] = useActionState(createBooking, initialState);
   return (
-    <form action={createBooking}>
+    <form action={formAction}>
       <div className="rounded-md bg-slate-50 p-4 md:p-6">
         {/* customer name */}
         <div className="mb-4">
@@ -19,6 +24,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
               id="customer"
               className="peer block w-full cursor-pointer rounded-md border border-slate-200 py-2 pl-10 text-sm outline-2 placeholder:text-slate-500"
               defaultValue=""
+              aria-describedby="customer-error"
             >
               <option value="" disabled>
                 Select a customer
@@ -31,6 +37,14 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
             </select>
             <CircleUserRound className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-slate-500" />
           </div>
+        </div>
+        <div id="customer-error" aria-live="polite" aria-atomic="true">
+          {state.errors?.customerId &&
+            state.errors.customerId.map((error: string) => (
+              <p key={error} className="mt-2 text-sm text-red-500">
+                {error}
+              </p>
+            ))}
         </div>
 
         {/* booking amount */}
