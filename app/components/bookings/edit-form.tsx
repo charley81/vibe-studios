@@ -6,6 +6,11 @@ import Link from 'next/link';
 import { Button } from '../ui/button';
 import { updateBooking } from '@/app/lib/actions';
 
+// TODO: Add form validation
+// Add useActionState to edit form
+// Edit the updateBooking action to handle validation errors from Zod
+// Display errors in your component, and add aria labels to improve accessibility
+
 export default function Form({
   booking,
   customers
