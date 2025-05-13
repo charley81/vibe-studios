@@ -5,6 +5,11 @@ import { CreateBooking } from '@/app/components/bookings/buttons';
 import { BookingsTableSkeleton } from '@/app/components/dashboard/skeletons';
 import { Suspense } from 'react';
 import { fetchBookingsPages } from '@/app/lib/data';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Bookings'
+};
 
 export default async function BookingsPage(props: {
   searchParams?: Promise<{
